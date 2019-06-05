@@ -67,15 +67,10 @@ namespace TicTacToe
                     playAgain = Convert.ToInt32(tempString);
                     if (playAgain == 1)
                     {
-                        board[0] = "0";
-                        board[1] = "1";
-                        board[2] = "2";
-                        board[3] = "3";
-                        board[4] = "4";
-                        board[5] = "5";
-                        board[6] = "6";
-                        board[7] = "7";
-                        board[8] = "8";
+                        for (int i = 0; i < board.Length; i++)
+                        {
+                            board[i] = Convert.ToString(i);
+                        }
                         displayGame();
                     }
                     return;
@@ -87,15 +82,9 @@ namespace TicTacToe
                     playAgain = Convert.ToInt32(tempString);
                     if (playAgain == 1)
                     {
-                        board[0] = "0";
-                        board[1] = "1";
-                        board[2] = "2";
-                        board[3] = "3";
-                        board[4] = "4";
-                        board[5] = "5";
-                        board[6] = "6";
-                        board[7] = "7";
-                        board[8] = "8";
+                        for (int i = 0; i < board.Length; i++) {
+                            board[i] = Convert.ToString(i);
+                        }                     
                         displayGame();
                     }
                     return;
