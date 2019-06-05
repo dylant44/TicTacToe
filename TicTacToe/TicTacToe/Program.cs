@@ -27,6 +27,8 @@ namespace TicTacToe
             Boolean playing = true;
             Boolean x = true;
             MainClass tictoe = new MainClass();
+            int playAgain = 0;
+            String tempString = null;
 
             tictoe.displayTemplate();
 
@@ -35,7 +37,6 @@ namespace TicTacToe
                 if (x)
                 {
                     int num;
-                    String tempString;
                     WriteLine("Player X, input a number");
                     tempString = ReadLine();
                     num = Convert.ToInt32(tempString);
@@ -48,7 +49,6 @@ namespace TicTacToe
                 else
                 {
                     int num;
-                    String tempString;
                     WriteLine("Player O, input a number");
                     tempString = ReadLine();
                     num = Convert.ToInt32(tempString);
@@ -62,19 +62,48 @@ namespace TicTacToe
 
                 if (Win() != null)
                 {
-
-                    WriteLine((x ? "O" : "X") + " is the Winner!");
+                    WriteLine((x ? "O" : "X") + " is the Winner! Enter 1 to play again or 999 to quit");
+                    tempString = ReadLine();
+                    playAgain = Convert.ToInt32(tempString);
+                    if (playAgain == 1)
+                    {
+                        board[0] = "0";
+                        board[1] = "1";
+                        board[2] = "2";
+                        board[3] = "3";
+                        board[4] = "4";
+                        board[5] = "5";
+                        board[6] = "6";
+                        board[7] = "7";
+                        board[8] = "8";
+                        displayGame();
+                    }
                     return;
                 }
                 else if (count == 9)
                 {
-                    WriteLine("TIE!");
-                    ReadLine();
+                    WriteLine("TIE! Enter 1 to play again or 999 to quit");
+                    tempString = ReadLine();
+                    playAgain = Convert.ToInt32(tempString);
+                    if (playAgain == 1)
+                    {
+                        board[0] = "0";
+                        board[1] = "1";
+                        board[2] = "2";
+                        board[3] = "3";
+                        board[4] = "4";
+                        board[5] = "5";
+                        board[6] = "6";
+                        board[7] = "7";
+                        board[8] = "8";
+                        displayGame();
+                    }
                     return;
                 }
 
 
             } while (playing || count != 9);
+
         }
 
 
